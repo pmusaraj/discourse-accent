@@ -25,7 +25,7 @@
   --shadow-composer: 0 -2px 12px rgb(0, 0, 0, 0.1);
   --title-color--header: var(--tertiary);
   --heading-font-family:
-    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    system-ui, -apple-system, "Segoe UI", roboto, sans-serif;
 }
 
 @mixin accent-background-pattern {
