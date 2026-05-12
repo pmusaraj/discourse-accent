@@ -203,6 +203,10 @@ div.edit-category,
   margin-top: var(--space-6);
 }
 
+.read-state.read {
+  right: 8px;
+}
+
 .post__row {
   .topic-avatar {
     border-top: none;
