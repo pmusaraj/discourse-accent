@@ -2,4 +2,4 @@ en:
   theme_metadata:
     description: A sharp, clean Discourse theme.
     settings:
-      example_setting: A description of a setting.
+      background_pattern: "Choose the subtle tertiary-color pattern shown in the bottom viewport corners."

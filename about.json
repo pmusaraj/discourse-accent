@@ -1,5 +1,5 @@
 {
-  "name": "discourse-accent",
+  "name": "Accent",
   "authors": "Discourse",
   "about_url": "TODO: Put your theme's public repo or Meta topic URL here",
   "license_url": "TODO: Put your theme's LICENSE URL here",
@@ -9,5 +9,21 @@
   "maximum_discourse_version": null,
   "assets": {},
   "modifiers": {},
-  "color_schemes": {}
+  "theme_site_settings": {
+    "enable_welcome_banner": false,
+    "search_experience": "search_icon"
+  },
+  "color_schemes": {
+    "accent-light": {
+      "primary": "111111",
+      "secondary": "F7F7FC",
+      "tertiary": "3D3DA3",
+      "header_background": "FFFFFF",
+      "header_primary": "111111",
+      "danger": "cf4335",
+      "success": "1ca551",
+      "love": "cf4335"
+    }
+  },
+  "screenshots": ["screenshots/light.png"]
 }

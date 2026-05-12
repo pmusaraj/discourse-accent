@@ -1,0 +1,442 @@
+// Theme's SCSS
+
+@use "lib/viewport";
+
+:root {
+  --d-sidebar-section-border-color: transparent;
+  --d-sidebar-border-color: transparent;
+  --topic-list-item-background-color: transparent;
+  --topic-list-item-background-color--visited: transparent;
+  --table-border-color: transparent;
+  --d-content-background: transparent;
+  --d-border-radius: 6px;
+  --d-border-radius-large: 12px;
+  --d-table-border-top-height: 0px;
+  --d-hover-text-color: var(--secondary);
+  --d-chat-input-bg-color: var(--header_background);
+  --d-topic-list-header-background-color: var(--header_background);
+  --d-input-border: 1px solid var(--primary-200);
+  --input-border-color: var(--primary-200);
+  --d-unread-notification-background: var(--tertiary-very-low);
+  --d-selected: var(--tertiary);
+  --d-selected-text-color: var(--secondary);
+  --shadow-card: 0 2px 6px rgb(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 4px 12px rgb(0, 0, 0, 0.1);
+  --shadow-composer: 0 -2px 12px rgb(0, 0, 0, 0.1);
+  --title-color--header: var(--tertiary);
+  --heading-font-family:
+    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@mixin accent-background-pattern {
+  @if $background-pattern == "dots" {
+    background-image: radial-gradient(var(--tertiary) 3px, transparent 3px);
+    background-size: 12px 12px;
+  } @else if $background-pattern == "grid-crosses" {
+    background-image:
+      linear-gradient(to bottom, var(--tertiary) 0 8px, transparent 8px),
+      linear-gradient(to right, var(--tertiary) 0 8px, transparent 8px);
+    background-repeat: repeat;
+    background-size: 22px 22px;
+  } @else if $background-pattern == "diagonal-hatch" {
+    background-image: repeating-linear-gradient(
+      135deg,
+      var(--tertiary) 0 1px,
+      transparent 1px 12px
+    );
+  }
+}
+
+@if $background-pattern != "nothing" {
+  @include viewport.from(md) {
+    html:not(.admin-area) {
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        bottom: 0;
+        width: 20vw;
+        height: 40vh;
+        pointer-events: none;
+        z-index: -1;
+        opacity: 0.1;
+        mask-image: radial-gradient(
+          circle at bottom left,
+          black,
+          transparent 70%
+        );
+      }
+
+      body::before,
+      body::after {
+        @include accent-background-pattern;
+      }
+
+      body::before {
+        left: 0;
+      }
+
+      body::after {
+        right: 0;
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
+
+// Have to use this because of modernize-foundation specificity
+#main-outlet-wrapper {
+  --d-button-default-text-color: var(--primary);
+  --d-button-default-bg-color: var(--header_background);
+  --d-button-default-icon-color: var(--primary);
+  --d-button-default-border: 1px solid var(--header_background);
+  --d-button-default-border--hover: 1px solid var(--tertiary-low);
+  --d-button-default-bg-color--hover: var(--tertiary-low);
+  --d-button-default-icon-color--hover: var(--primary);
+  --d-button-default-text-color--hover: var(--primary);
+}
+
+.user-menu {
+  --d-sidebar-active-color: var(--secondary);
+  --primary-medium: var(--primary-high);
+}
+
+@keyframes shrink-header {
+  to {
+    background-color: rgb(255, 255, 255, 0.25);
+    backdrop-filter: blur(14px);
+    box-shadow: var(--shadow-header);
+  }
+}
+
+.d-header {
+  --header_primary-low-mid: var(--primary);
+  --d-header-icon-color: var(--primary);
+  --shadow-header: none;
+  background-color: rgb(0, 0, 0, 0);
+
+  > .wrap {
+    --shadow-header: 0 2px 6px rgb(0, 0, 0, 0.05);
+    backdrop-filter: blur(0);
+    border-bottom-left-radius: var(--d-border-radius-large);
+    border-bottom-right-radius: var(--d-border-radius-large);
+    animation: shrink-header linear both;
+    animation-timeline: scroll();
+    animation-range: 50px 200px;
+  }
+}
+
+.category-list {
+  --content-border-color: transparent;
+}
+
+.btn-default,
+.btn-primary,
+.btn-danger {
+  box-shadow: var(--shadow-card);
+}
+
+@mixin panel {
+  box-sizing: border-box;
+  background-color: var(--header_background);
+  border-radius: var(--d-border-radius-large);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-8);
+
+  @include viewport.until(md) {
+    padding: var(--space-5);
+  }
+}
+
+.users-directory,
+.contents.body-page,
+.container .user-main,
+.container.tags-index,
+.container.badges,
+.container.show-badge,
+.container.group,
+.groups-header,
+#upcoming-events-calendar,
+.reviewable-container,
+div.edit-category,
+.search-container,
+.tag-settings,
+.more-topics__container,
+.admin-content.boxed.white {
+  @include panel;
+}
+
+.list-controls {
+  @include panel;
+  padding-block-end: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.list-container {
+  @include panel;
+  padding-block-start: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#topic-title h1 a {
+  color: var(--tertiary);
+}
+
+.topic-map,
+.topic-map.--op {
+  border-top: none;
+  border-bottom: none;
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-6);
+}
+
+.topic-status-info,
+.topic-timer-info,
+.small-action .topic-avatar,
+.small-action .small-action-desc {
+  border-top: none;
+}
+
+.topic-post + .topic-post {
+  margin-top: var(--space-6);
+}
+
+.post__row {
+  .topic-avatar {
+    border-top: none;
+  }
+
+  .post__body {
+    @include panel;
+    border-top: none;
+    border-bottom: none;
+    margin-left: 1rem;
+    padding: var(--space-6);
+
+    &:hover {
+      box-shadow: var(--shadow-card-hover);
+    }
+  }
+}
+
+#main-outlet {
+  padding-bottom: 3rem;
+}
+
+.discourse-tag.box {
+  background-color: var(--primary-100);
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.topic-list-item,
+tbody tr {
+  &:hover,
+  &.selected {
+    background-color: rgb(var(--secondary-rgb), 0.5);
+  }
+}
+
+.list-controls,
+.groups-header {
+  background-color: rgb(var(--header_background-rgb), 0.6);
+}
+
+.navigation-container {
+  background-color: transparent;
+
+  --input-border-color: transparent;
+  --d-nav-border-color--active: transparent;
+
+  .combo-box .combo-box-header {
+    background-color: transparent;
+  }
+}
+
+.user-main .about .details,
+.user-main .about.collapsed-info .details {
+  background-color: transparent;
+}
+
+#list-area {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.more-topics__container {
+  margin-top: 2rem;
+}
+
+.groups-boxes .group-box {
+  @include panel;
+  padding: var(--space-2);
+}
+
+.pinned-options-btn__description,
+.notifications-tracking-btn__description {
+  --primary-medium: var(--primary-high);
+}
+
+.user-notifications-list {
+  --content-border-color: var(--header_background);
+}
+
+.d-modal__container {
+  background-color: var(--header_background);
+}
+
+aside.onebox {
+  background-color: var(--header_background);
+
+  --onebox-border-color: transparent;
+}
+
+// sidebar overrides
+.sidebar-section-wrapper {
+  --d-sidebar-active-background: var(--secondary);
+  --d-sidebar-highlight-background: var(--secondary);
+  --d-sidebar-highlight-color: var(--tertiary-high);
+  --d-sidebar-active-color: var(--tertiary);
+  --d-sidebar-active-icon-color: var(--tertiary);
+
+  // this probably should be in core
+  .sidebar-section-link:focus-visible,
+  .sidebar-section-link:hover {
+    .icon {
+      color: var(--d-sidebar-highlight-color);
+    }
+  }
+  padding: 0.5rem 0;
+}
+
+.sidebar-section-wrapper .sidebar-section-header-wrapper {
+  padding-left: 0.25rem;
+}
+
+.sidebar-footer-wrapper {
+  background: none;
+  position: absolute;
+
+  .sidebar-footer-container::before {
+    display: none;
+  }
+
+  .sidebar-footer-actions {
+    background-color: var(--secondary);
+    border-radius: 8px;
+    padding: 0.2rem;
+  }
+}
+
+.admin-area .sidebar-wrapper .admin-panel {
+  --d-sidebar-admin-background: transparent;
+}
+
+#reply-control {
+  --secondary: var(--header_background);
+  --d-input-bg-color: var(--header_background);
+}
+
+// chat
+.chat-drawer .chat-drawer-container {
+  background-color: var(--header_background);
+  box-shadow: var(--shadow-card);
+}
+
+.chat-channel {
+  --d-hover: var(--secondary);
+}
+
+.chat-channel-row {
+  @media (hover: hover) {
+    &:hover,
+    &.active {
+      background: var(--secondary);
+    }
+  }
+}
+
+.full-page-chat {
+  --content-border-color: transparent;
+  background-color: var(--header_background);
+  box-shadow: var(--shadow-card);
+
+  // hack to get the box shadow to be on both sides of the box
+  margin-left: 5px;
+}
+
+.admin-onboarding-banner__wrap {
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+
+  @if $background-pattern != "nothing" {
+    @include viewport.from(md) {
+      &::before {
+        @include accent-background-pattern;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30%;
+        height: 80%;
+        pointer-events: none;
+        opacity: 0.1;
+        mask-image: radial-gradient(
+          circle at top right,
+          black,
+          transparent 70%
+        );
+      }
+    }
+  }
+}
+
+.more-topics__container {
+  max-width: calc(
+    var(--topic-avatar-width) + var(--topic-body-width) +
+      var(--topic-body-width-padding) * 3
+  );
+}
+
+@include viewport.until(md) {
+  .topic-list .topic-list-data {
+    img.avatar {
+      width: 36px;
+      height: 36px;
+    }
+
+    .right {
+      margin-left: 48px;
+    }
+  }
+
+  .topic-meta-data {
+    margin-left: 20px;
+  }
+
+  .topic-post > article {
+    border-top: none;
+  }
+
+  .more-topics__container .more-topics__list-title,
+  .more-topics__container .more-topics__browse-more {
+    padding-left: 0;
+  }
+
+  .category-breadcrumb {
+    --nav-space: 0;
+    font-size: var(--font-down-1-rem);
+    flex-basis: calc(100% + 1rem);
+
+    // correct button padding for better visual alignment
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+
+    > li {
+      margin-right: 0;
+    }
+  }
+}

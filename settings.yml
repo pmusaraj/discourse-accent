@@ -1,2 +1,8 @@
-example_setting:
-  default: true
+background_pattern:
+  type: enum
+  default: dots
+  choices:
+    - dots
+    - grid-crosses
+    - diagonal-hatch
+    - nothing
