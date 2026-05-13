@@ -129,9 +129,11 @@
     backdrop-filter: blur(0);
     border-bottom-left-radius: var(--d-border-radius-large);
     border-bottom-right-radius: var(--d-border-radius-large);
+
     @include viewport.until(md) {
       @include blurry;
     }
+
     @include viewport.from(md) {
       animation: blurry-header linear both;
       animation-timeline: scroll();
@@ -320,6 +322,7 @@ aside.onebox {
 .sidebar-wrapper {
   --d-sidebar-background: transparent;
 }
+
 .sidebar-section-wrapper {
   --d-sidebar-active-background: var(--secondary);
   --d-sidebar-highlight-background: var(--secondary);
@@ -446,6 +449,7 @@ aside.onebox {
   .topic-post .topic-avatar {
     margin-top: 0.6rem;
     margin-left: -4px;
+
     img.avatar {
       box-shadow: var(--shadow-card);
       width: 36px;
@@ -454,7 +458,7 @@ aside.onebox {
   }
 
   .topic-meta-data {
-    margin-left: 0px;
+    margin-left: 0;
   }
 
   .more-topics__container .more-topics__list-title,
