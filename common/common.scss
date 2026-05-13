@@ -23,7 +23,6 @@
   --shadow-card: 0 2px 6px rgb(0, 0, 0, 0.1);
   --shadow-card-hover: 0 4px 12px rgb(0, 0, 0, 0.1);
   --shadow-composer: 0 -2px 12px rgb(0, 0, 0, 0.1);
-  --title-color--header: var(--tertiary);
   --heading-font-family:
     system-ui, -apple-system, "Segoe UI", roboto, sans-serif;
 }
@@ -120,9 +119,15 @@
     backdrop-filter: blur(0);
     border-bottom-left-radius: var(--d-border-radius-large);
     border-bottom-right-radius: var(--d-border-radius-large);
-    animation: shrink-header linear both;
-    animation-timeline: scroll();
-    animation-range: 50px 200px;
+    @include viewport.until(md) {
+      background-color: rgb(255, 255, 255, 0.25);
+      backdrop-filter: blur(14px);
+    }
+    @include viewport.from(md) {
+      animation: shrink-header linear both;
+      animation-timeline: scroll();
+      animation-range: 50px 200px;
+    }
   }
 }
 
@@ -162,8 +167,17 @@ div.edit-category,
 .search-container,
 .tag-settings,
 .more-topics__container,
+.signup-body,
+.login-body,
+.wizard-container,
 .admin-content.boxed.white {
   @include panel;
+}
+
+body.static-login .login-welcome {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
 }
 
 .list-controls {
@@ -178,10 +192,6 @@ div.edit-category,
   padding-block-start: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
-
-#topic-title h1 a {
-  color: var(--tertiary);
 }
 
 .topic-map,
