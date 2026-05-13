@@ -100,6 +100,12 @@
   --primary-medium: var(--primary-high);
 }
 
+.admin-detail,
+.admin-config-area-card {
+  --secondary: var(--header_background);
+  --d-input-bg-color: var(--header_background);
+}
+
 @keyframes shrink-header {
   to {
     background-color: rgb(255, 255, 255, 0.25);
