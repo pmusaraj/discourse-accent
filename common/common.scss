@@ -430,12 +430,21 @@ aside.onebox {
     }
   }
 
-  .topic-meta-data {
-    margin-left: 20px;
-  }
-
   .topic-post > article {
     border-top: none;
+  }
+
+  .topic-post .topic-avatar {
+    margin-top: 0.6rem;
+    margin-left: -4px;
+    img.avatar {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  .topic-meta-data {
+    margin-left: 0px;
   }
 
   .more-topics__container .more-topics__list-title,
