@@ -298,6 +298,9 @@ aside.onebox {
 }
 
 // sidebar overrides
+.sidebar-wrapper {
+  --d-sidebar-background: transparent;
+}
 .sidebar-section-wrapper {
   --d-sidebar-active-background: var(--secondary);
   --d-sidebar-highlight-background: var(--secondary);
