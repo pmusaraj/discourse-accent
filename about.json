@@ -16,8 +16,8 @@
   "color_schemes": {
     "accent-light": {
       "primary": "111111",
-      "secondary": "F9FBF9",
-      "tertiary": "11501C",
+      "secondary": "F7F7FC",
+      "tertiary": "3D3DA3",
       "header_background": "FFFFFF",
       "header_primary": "111111",
       "danger": "cf4335",

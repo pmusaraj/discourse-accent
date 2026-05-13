@@ -438,6 +438,7 @@ aside.onebox {
     margin-top: 0.6rem;
     margin-left: -4px;
     img.avatar {
+      box-shadow: var(--shadow-card);
       width: 36px;
       height: 36px;
     }
@@ -450,6 +451,12 @@ aside.onebox {
   .more-topics__container .more-topics__list-title,
   .more-topics__container .more-topics__browse-more {
     padding-left: 0;
+  }
+
+  .more-topics__container .more-topics__browse-more {
+    padding-left: 0;
+    font-size: var(--font-0);
+    margin-top: 1rem;
   }
 
   .category-breadcrumb {
