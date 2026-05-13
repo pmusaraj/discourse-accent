@@ -106,11 +106,15 @@
   --d-input-bg-color: var(--header_background);
 }
 
-@keyframes shrink-header {
+@mixin blurry {
+  background-color: rgb(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-header);
+}
+
+@keyframes blurry-header {
   to {
-    background-color: rgb(255, 255, 255, 0.25);
-    backdrop-filter: blur(14px);
-    box-shadow: var(--shadow-header);
+    @include blurry;
   }
 }
 
@@ -126,11 +130,10 @@
     border-bottom-left-radius: var(--d-border-radius-large);
     border-bottom-right-radius: var(--d-border-radius-large);
     @include viewport.until(md) {
-      background-color: rgb(255, 255, 255, 0.25);
-      backdrop-filter: blur(14px);
+      @include blurry;
     }
     @include viewport.from(md) {
-      animation: shrink-header linear both;
+      animation: blurry-header linear both;
       animation-timeline: scroll();
       animation-range: 50px 200px;
     }
