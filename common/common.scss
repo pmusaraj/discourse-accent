@@ -251,7 +251,7 @@ body.static-login .login-welcome {
 }
 
 #main-outlet {
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 
 .discourse-tag.box {
@@ -488,5 +488,15 @@ aside.onebox {
     > li {
       margin-right: 0;
     }
+  }
+
+  .search-container .search-header {
+    padding: 0;
+  }
+
+  .search-container .search-advanced .search-info {
+    background-color: transparent;
+    border-top: 0;
+    padding-right: 0;
   }
 }
