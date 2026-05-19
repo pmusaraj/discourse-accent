@@ -136,6 +136,13 @@
       margin-left: 8px;
       margin-right: 8px;
       border-radius: var(--d-border-radius-large);
+
+      // backdrop-filter causes header-cloak to no longer take up whole viewport
+      // this is a back to reset it when there is an overlay (sidebar or user menu)
+      &:has(.header-cloak) {
+        backdrop-filter: none;
+        background-color: var(--header_background);
+      }
     }
 
     @include viewport.from(md) {
@@ -250,7 +257,7 @@ body.static-login .login-welcome {
   border-top: none;
   border-bottom: none;
   padding-top: var(--space-4);
-  padding-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
 }
 
 .topic-status-info,
@@ -258,6 +265,10 @@ body.static-login .login-welcome {
 .small-action .topic-avatar,
 .small-action .small-action-desc {
   border-top: none;
+}
+
+.small-action-desc.timegap {
+  text-align: center;
 }
 
 .topic-post + .topic-post {
