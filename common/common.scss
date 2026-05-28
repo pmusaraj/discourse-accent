@@ -223,6 +223,8 @@ div.edit-category,
 .signup-body,
 .login-body,
 .wizard-container,
+.nested-post.--depth-0,
+.nested-view__op,
 .admin-content.boxed.white {
   @include panel;
 }
