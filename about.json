@@ -25,10 +25,10 @@
       "love": "cf4335"
     },
     "accent-dark": {
-      "primary": "F2F2F2",
-      "secondary": "181522",
+      "primary": "E2E2E2",
+      "secondary": "0E0E19",
       "tertiary": "5C6BC0",
-      "header_background": "000014",
+      "header_background": "070710",
       "header_primary": "F7F7FC",
       "hover": "26264E",
       "danger": "F06A5F",
