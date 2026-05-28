@@ -23,6 +23,17 @@
       "danger": "cf4335",
       "success": "1ca551",
       "love": "cf4335"
+    },
+    "accent-dark": {
+      "primary": "F2F2F2",
+      "secondary": "0D0D1B",
+      "tertiary": "7B7BE8",
+      "header_background": "000014",
+      "header_primary": "F7F7FC",
+      "hover": "26264E",
+      "danger": "F06A5F",
+      "success": "4FD17D",
+      "love": "F06A5F"
     }
   },
   "screenshots": ["screenshots/light.png"]

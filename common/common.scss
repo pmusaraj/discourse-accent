@@ -107,7 +107,7 @@
 }
 
 @mixin blurry {
-  background-color: rgb(255, 255, 255, 0.25);
+  background-color: rgb(var(--header_background-rgb), 0.25);
   backdrop-filter: blur(14px);
   box-shadow: var(--shadow-header);
 }
