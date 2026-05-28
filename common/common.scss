@@ -18,12 +18,12 @@
   --d-input-border: 1px solid var(--primary-200);
   --input-border-color: var(--primary-200);
   --d-unread-notification-background: var(--tertiary-very-low);
-  --d-post-aside-background: var(--secondary-very-high);
-  --d-post-aside-border-left: 3px solid var(--secondary-high);
-
+  --d-post-aside-background: rgb(var(--secondary-rgb), 0.9);
+  --d-post-aside-border-left: 6px solid var(--secondary-very-high);
   --d-selected: var(--tertiary);
   --d-selected-text-color: var(--secondary);
   --shadow-card: 0 2px 6px rgb(var(--primary-rgb), 0.1);
+  --shadow-btn: 0 0px 4px rgb(var(--primary-rgb), 0.1);
   --shadow-composer: 0 -2px 12px rgb(var(--primary-rgb), 0.1);
   --heading-font-family:
     system-ui, -apple-system, "Segoe UI", roboto, sans-serif;
@@ -91,7 +91,7 @@
   --d-button-default-bg-color: var(--header_background);
   --d-button-default-icon-color: var(--primary);
   --d-button-default-border: 1px solid var(--header_background);
-  --d-button-default-border--hover: 1px solid var(--tertiary-low);
+  --d-button-default-border--hover: 1px solid var(--header_background);
   --d-button-default-bg-color--hover: var(--tertiary-low);
   --d-button-default-icon-color--hover: var(--primary);
   --d-button-default-text-color--hover: var(--primary);
@@ -162,7 +162,7 @@
 .btn-default,
 .btn-primary,
 .btn-danger {
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-btn);
 }
 
 .fk-d-menu__inner-content,
