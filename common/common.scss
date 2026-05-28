@@ -18,6 +18,9 @@
   --d-input-border: 1px solid var(--primary-200);
   --input-border-color: var(--primary-200);
   --d-unread-notification-background: var(--tertiary-very-low);
+  --d-post-aside-background: var(--secondary-very-high);
+  --d-post-aside-border-left: 3px solid var(--secondary-high);
+
   --d-selected: var(--tertiary);
   --d-selected-text-color: var(--secondary);
   --shadow-card: 0 2px 6px rgb(var(--primary-rgb), 0.1);
@@ -226,6 +229,14 @@ div.edit-category,
 .nested-view__op,
 .admin-content.boxed.white {
   @include panel;
+}
+
+.nested-post.--depth-0,
+.nested-view__op {
+  padding: var(--space-4);
+  .nested-post__menu {
+    margin-bottom: 0;
+  }
 }
 
 body.static-login .login-welcome {
