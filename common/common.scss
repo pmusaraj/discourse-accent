@@ -371,6 +371,17 @@ aside.onebox {
   --onebox-border-color: transparent;
 }
 
+.user-card .card-content,
+.group-card .card-content {
+  background-color: var(--header_background);
+}
+
+.nested-view__floating-actions {
+  padding: 1em 0.5em;
+  margin-top: 1em;
+  bottom: 1em;
+}
+
 // sidebar overrides
 .sidebar-wrapper {
   --d-sidebar-background: transparent;
