@@ -9,8 +9,8 @@
   --topic-list-item-background-color--visited: transparent;
   --table-border-color: transparent;
   --d-content-background: transparent;
-  --d-border-radius: 6px;
-  --d-border-radius-large: 12px;
+  --token-radius-normal: 6px;
+  --token-radius-large: 12px;
   --d-table-border-top-height: 0px;
   --d-hover-text-color: var(--secondary);
   --d-chat-input-bg-color: var(--header_background);
@@ -194,6 +194,20 @@
 
 .nav-stacked a {
   --d-sidebar-highlight-background: var(--header_background);
+}
+
+.archetype-private_message {
+  .regular.contents {
+    border: none;
+  }
+
+  .current-user-post .regular.contents {
+    background-color: transparent;
+  }
+
+  .current-user-post .post__body {
+    border-bottom: 3px solid var(--tertiary-medium);
+  }
 }
 
 @mixin panel {
