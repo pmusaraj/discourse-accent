@@ -535,6 +535,8 @@ aside.onebox {
     var(--topic-avatar-width) + var(--topic-body-width) +
       var(--topic-body-width-padding) * 3
   );
+
+  background-color: rgba(var(--header_background-rgb), 0.4);
 }
 
 @include viewport.until(md) {
