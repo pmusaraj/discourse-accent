@@ -389,6 +389,10 @@ aside.onebox {
   bottom: 1em;
 }
 
+.nested-view__op > .nested-view__topic-map {
+  background-color: transparent;
+}
+
 // sidebar overrides
 .sidebar-wrapper {
   --d-sidebar-background: transparent;
