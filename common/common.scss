@@ -257,6 +257,7 @@ div.edit-category,
   background-color: transparent;
   border: none;
 }
+
 .nested-post.--depth-0,
 .nested-view__op-article {
   padding: var(--space-4);
@@ -269,6 +270,7 @@ div.edit-category,
 .alert.alert-info {
   border-radius: var(--d-border-radius);
 }
+
 body.static-login .login-welcome {
   background-color: transparent;
   box-shadow: none;
@@ -541,8 +543,7 @@ aside.onebox {
     var(--topic-avatar-width) + var(--topic-body-width) +
       var(--topic-body-width-padding) * 3
   );
-
-  background-color: rgba(var(--header_background-rgb), 0.4);
+  background-color: rgb(var(--header_background-rgb), 0.4);
 
   .topic-list-item:hover,
   .topic-list-item.selected,
