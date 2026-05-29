@@ -86,7 +86,8 @@
 }
 
 // Have to use this because of modernize-foundation specificity
-#main-outlet-wrapper {
+#main-outlet-wrapper,
+.menu-panel {
   --d-button-default-text-color: var(--primary);
   --d-button-default-bg-color: var(--header_background);
   --d-button-default-icon-color: var(--primary);
@@ -208,6 +209,11 @@
   .current-user-post .post__body {
     border-bottom: 3px solid var(--tertiary-medium);
   }
+}
+
+.menu-panel {
+  background: var(--header_background);
+  border-radius: var(--token-radius-normal);
 }
 
 @mixin panel {
