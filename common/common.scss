@@ -246,13 +246,19 @@ div.edit-category,
 .login-body,
 .wizard-container,
 .nested-post.--depth-0,
-.nested-view__op,
+.nested-view__op-article,
 .admin-content.boxed.white {
   @include panel;
 }
 
-.nested-post.--depth-0,
 .nested-view__op {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+.nested-post.--depth-0,
+.nested-view__op-article {
   padding: var(--space-4);
 
   .nested-post__menu {
@@ -544,6 +550,24 @@ aside.onebox {
   tbody tr.selected {
     background-color: var(--header_background);
   }
+}
+
+.featured-topic.selected,
+.topic-post.selected,
+.nested-view__op-article[data-keyboard-selected],
+.nested-post[data-keyboard-selected]
+  > .nested-post__main
+  > .nested-post__article {
+  box-shadow: none;
+
+  .post__row .post__body {
+    border-left: 3px solid var(--tertiary);
+  }
+}
+
+.nested-view__op-article[data-keyboard-selected],
+.nested-post[data-keyboard-selected] {
+  border-left: 3px solid var(--tertiary);
 }
 
 @include viewport.until(md) {
