@@ -537,6 +537,13 @@ aside.onebox {
   );
 
   background-color: rgba(var(--header_background-rgb), 0.4);
+
+  .topic-list-item:hover,
+  .topic-list-item.selected,
+  tbody tr:hover,
+  tbody tr.selected {
+    background-color: var(--header_background);
+  }
 }
 
 @include viewport.until(md) {
