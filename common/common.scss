@@ -240,6 +240,9 @@ div.edit-category,
   }
 }
 
+.alert.alert-info {
+  border-radius: var(--d-border-radius);
+}
 body.static-login .login-welcome {
   background-color: transparent;
   box-shadow: none;
