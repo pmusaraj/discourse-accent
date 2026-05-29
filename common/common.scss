@@ -442,7 +442,7 @@ aside.onebox {
   padding-left: 0.25rem;
 }
 
-.sidebar-footer-wrapper {
+.sidebar-wrapper .sidebar-footer-wrapper {
   background: none;
   position: absolute;
 
@@ -454,6 +454,15 @@ aside.onebox {
     background-color: var(--secondary);
     border-radius: 8px;
     padding: 0.2rem;
+  }
+}
+
+.menu-panel .sidebar-footer-wrapper {
+  --secondary: transparent;
+  --d-sidebar-background: transparent;
+
+  .sidebar-footer-container::before {
+    display: none;
   }
 }
 
