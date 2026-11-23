@@ -114,6 +114,12 @@
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   box-shadow: var(--shadow-header);
+  // Force the wrap onto its own compositing layer: Safari can otherwise
+  // compute backdrop-filter correctly yet never paint the backdrop, and
+  // never pick up dynamic changes to it. (No new containing-block side
+  // effects here — non-none backdrop-filter already establishes one.)
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 @keyframes blurry-header {
