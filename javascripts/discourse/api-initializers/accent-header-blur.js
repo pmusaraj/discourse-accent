@@ -27,5 +27,12 @@ export default apiInitializer((api) => {
 
   window.addEventListener("scroll", requestSync, { passive: true });
   api.onPageChange(requestSync);
+  // Re-sync after boot milestones: SPA scroll-to-post and scroll
+  // restoration can land after the initial sync with no further events.
+  window.addEventListener("load", requestSync);
+  api.onPageChange(() => {
+    setTimeout(requestSync, 500);
+    setTimeout(requestSync, 2000);
+  });
   requestSync();
 });
