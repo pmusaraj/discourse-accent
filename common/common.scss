@@ -156,6 +156,25 @@
   }
 }
 
+// Deterministic fallback: when the scroll timeline misreports (Safari after
+// SPA scroll jumps), the class carries the same end state. `animation: none`
+// is required — a stuck animation would override this declaration.
+html.accent-header-blurred .d-header > .wrap {
+  animation: none;
+  @include blurry;
+}
+
+// Browsers without scroll-driven animations: always blurred on desktop
+// instead of relying on the zero-duration fill accident.
+@supports not (animation-timeline: scroll()) {
+  @include viewport.from(md) {
+    .d-header > .wrap {
+      animation: none;
+      @include blurry;
+    }
+  }
+}
+
 .category-list {
   --content-border-color: transparent;
 }
