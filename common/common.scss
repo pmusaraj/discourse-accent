@@ -538,6 +538,13 @@ aside.onebox {
   }
 }
 
+.admin-onboarding-banner__header {
+  // Text-derived baseline (core: var(--primary-100)) washes out now that
+  // Clay/Lagoon primaries are neutral — use the accent tint instead so the
+  // header stays distinct from the step list in every scheme.
+  background: var(--tertiary-very-low);
+}
+
 .more-topics__container {
   max-width: calc(
     var(--topic-avatar-width) + var(--topic-body-width) +
