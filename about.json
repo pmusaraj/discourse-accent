@@ -34,6 +34,30 @@
       "danger": "F06A5F",
       "success": "4FD17D",
       "love": "F06A5F"
+    },
+    "accent-clay-light": {
+      "primary": "2B211C",
+      "secondary": "FAF6F0",
+      "tertiary": "B95426",
+      "header_background": "FFFFFF",
+      "header_primary": "2B211C",
+      "highlight": "F3E6D8",
+      "hover": "F0E2D3",
+      "danger": "C63A32",
+      "success": "2E7D4F",
+      "love": "C63A32"
+    },
+    "accent-clay-dark": {
+      "primary": "EDE2D6",
+      "secondary": "14100C",
+      "tertiary": "E8935C",
+      "header_background": "1F1713",
+      "header_primary": "FAF6F0",
+      "highlight": "2A211B",
+      "hover": "2A211B",
+      "danger": "F0807A",
+      "success": "5BD68A",
+      "love": "F0807A"
     }
   },
   "screenshots": ["screenshots/light.png"]
